@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>调试toner</title>
+	</head>
+	<body></body>
+	<script src="toner.js"></script>
+<script>
+
+	/**
+	 * RGB转换为16进制
+	 */
+	toner.toHex('255,255,255') 
+	
+	
+	/**
+	 * 16进制转RGB
+	 */
+	toner.toRGB('#EEEEEE')
+	
+	
+	/**
+	 * 更改背景图片颜色
+	 */
+	toner.setImageColor('image对象','旧颜色(16进制)','新颜色(16进制)')
+	
+	/**
+	 * 更改图片色彩
+	 */
+	toner.setBgImageColor('Dom对象','旧颜色(16进制)','新颜色(16进制)')
+	
+</script>
+	
+</html>

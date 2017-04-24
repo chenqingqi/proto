@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义表单</title>
+		<script src="../form.js"></script>
+		<script src="../../request/request.js"></script>
+	</head>
+	<body>
+		
+<div id="form">
+	
+	<!-- 选项卡 -->
+	<ul id="table">
+		<li value="0">直播</li>
+		<li value="1" selected>图文</li>
+		<li value="2">实验室</li>
+	</ul>
+	
+	<!-- 提交按钮-->
+	<p id="button">确定</p>
+
+</div>
+		
+	</body>
+	
+<script>
+
+	
+	/**
+	 * 异步提交数据
+	 */
+	document.querySelector('#button').addEventListener('click',function()
+	{
+		request(getCustomData(),'server.php','post',function(data)
+		{
+			console.log(data)
+		})
+	})
+	
+	
+	/**
+	 * 获取选项卡值
+	 */
+	function getCustomData()
+	{
+		var table   = document.querySelector('#table');
+		
+		for(var i=0;i<table.children.length;i++)
+		{
+			if(table.children[i].getAttribute('selected') == '')
+			{
+				return {table:table.children[i].getAttribute('value')}
+			}
+		}
+		
+		return null;
+	}
+	
+	
+	
+	/**
+	 * 使用formData组装自定义表单数据
+	 */
+	function getFormData()
+	{
+		var data = new FormData();
+		
+		var table   = document.querySelector('#table');
+		
+		for(var i=0;i<table.children.length;i++)
+		{
+			if(table.children[i].getAttribute('selected') == '')
+			{
+				data.append('table',table.children[i].getAttribute('value'))
+				return data;
+			}
+		}
+		
+		return null;
+	}
+	
+</script>
+</html>

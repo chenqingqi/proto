@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>选择 select</title>
+	</head>
+	<body>
+		
+		<!-- 结构 -->
+		<ul id="list" class="list" name='list'>
+			<li class="item" value='1'>1</li>
+			<li class="item" value='2'>2</li>
+			<li class="item" value='3'>3</li>
+		</ul>
+		
+	</body>
+	
+	
+	<!-- 行为 -->
+<script>
+
+
+	/**
+	 * 获取元素集合(类名)
+	 */
+	console.log(document.querySelectorAll('.item'))
+	
+	
+	/**
+	 * 获取元素集合(标签名)
+	 */
+	console.log(document.querySelectorAll('li'))
+	
+	
+	/**
+	 * 获取元素集合(属性名)
+	 */
+	console.log(document.querySelectorAll('li'))
+	
+	
+	/**
+	 * 获取元素集合(标签名)
+	 */
+	console.log(document.querySelectorAll('[value]'))
+	
+	
+	/**
+	 * 获取单个元素(ID)
+	 */
+	console.log(document.querySelector('#list'))
+	
+	
+	/**
+	 * 获取元素集合(标签名)中指定属性值的元素
+	 */
+	console.log(document.querySelector('li[value="1"]'))
+	
+	
+	/**
+	 * 获取元素集合(类名)中指定位置的元素
+	 */
+	console.log(document.querySelectorAll('.item')[1])
+	
+	
+	/**
+	 * 获取指定元素下的指定id的元素
+	 */
+	console.log(document.querySelector('body #list'))
+	
+	
+	/**
+	 * 获取某个节点下的指定属性值的元素
+	 */
+	var node = document.querySelector('#list');
+	console.log(node.querySelector('li[value="1"]'))
+	
+	
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>date扩展</title>
+	</head>
+	<body></body>
+	<script src="date.js"></script>
+<script>
+
+	var date = new Date();
+	
+	/**
+	 * 时间格式化
+	 */
+	console.log(date.format('年-月-日 时:分:秒'));           
+	
+	//输出：2016年12月26日 14时22分23秒
+	
+	console.log(date.format('yyyy-mm-dd hh:mm:ss'));        
+	
+	//输出：2016-12-26 14:29:08
+	
+	console.log(date.format('yyyy-mm-dd'));                 
+	
+	//输出：2016-12-26
+	
+	console.log(date.format('hh:mm:ss'));                   
+	
+	//输出：14:29:08
+	
+	console.log(date.format('yyyy-mm-dd hh:mm:ss week'));   
+	
+	//输出：2016-12-26 14:29:08 星期一
+	
+	console.log(date.format('yyyy-mm-dd week hh:mm:ss'));       
+	
+	//输出：2016-12-26 星期一 14:29:08
+	
+	
+	/**
+	 * 获取毫秒数
+	 */
+	console.log(new Date().getTime())                                
+	
+	//输出：1482733832070
+	
+	
+	/**
+	 * 毫秒数格式化
+	 */
+	console.log(new Date(1482733832070).format('年-月-日 时:分:秒')); 
+	
+	//输出：2016年12月26日 14时30分32秒
+	
+	
+	
+	/**
+	 * 倒计时
+	 */
+	var time = new Date().resetTime([2016,12,30,12,00,00]).getTime();
+	
+	window.setInterval(function(){
+		
+		time = time-1000;
+		
+		console.log(new Date(time).format('年-月-日 时:分:秒')); 
+		
+	},1000) 
+	
+</script>
+	
+</html>

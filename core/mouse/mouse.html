@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>鼠标mouse</title>
+	</head>
+	<body>
+		
+		<!-- 结构 -->
+		<div id="rect"></div>
+		
+		<!-- 样式 -->
+		<style>
+		
+			div
+			{
+				width: 200px;
+				height: 200px;
+				background-color: #666666;
+				margin: 100px 0 0 100px;
+			}
+			
+		</style>
+		
+	</body>
+	
+	<script src="mouse.js"></script>
+	
+<script>
+	
+	var node = document.getElementById('rect');
+	
+	
+	/**
+	 * 设置光标样式
+	 */
+	node.cursor('pointer');
+	
+	
+	/**
+	 * 获取鼠标位置
+	 */
+	node.addEventListener('mousemove',function(e)
+	{
+		//元素
+		console.log(e.offsetX)
+		
+		//屏幕
+		console.log(e.screenX)
+		
+		//浏览器窗口
+		console.log(e.clientX)
+	})
+	
+	
+	/**
+	 * 鼠标悬停或移出
+	 */
+	node.addEventListener('mouseover',function(e)
+	{
+		//鼠标是否真正移入或移出(DOM缺陷)
+		if(this.checkHover(e))
+		{
+			console.log('悬停')
+		}
+	})
+	
+	node.addEventListener('mouseout',function(e)
+	{
+		//鼠标是否真正移入或移出(DOM缺陷)
+		if(this.checkHover(e))
+		{
+			console.log('离开')
+		}
+	})
+	
+</script>
+
+</html>

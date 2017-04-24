@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>创建 create</title>
+	</head>
+	<body></body>
+	
+	<script src="create.js"></script>
+	
+	<!-- 行为 -->
+	<script>
+
+
+		/**
+		 * 通过节点类型名称创建节点
+		 */
+		var node = document.createElement('p')
+		
+		node.innerText = '123';
+		
+		document.body.appendChild(node)
+		
+		
+		/**
+		 * 通过字符串创建节点
+		 */
+		var node = document.createElementByString('<p>456</p>')
+		document.body.appendChild(node)
+		
+		
+	</script>
+</html>

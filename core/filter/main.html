@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>滤镜filter</title>
+	</head>
+	<body>
+		
+		<!-- 图片 -->
+		<img id="pic" src="a.jpg" />
+		
+		<!-- div -->
+		<div id="rect" style="width: 300px;height: 300px;background-color: orange;"/>
+		
+	</body>
+	
+	<script src="filter.js"></script>
+	
+	<script>
+	
+		var pic  = document.querySelector('#pic');
+		
+		var rect = document.querySelector('#rect');
+		
+		/**
+		 * 透明度
+		 * @value 0-1之间的小数
+		 */
+		pic.alpha(0.5);
+		rect.alpha(0.5);
+		
+		
+		/**
+		 * 阴影
+		 * @value 'x轴,y轴,模糊程度,阴影大小,颜色'
+		 */
+		pic.shadow('5px 5px 10px 1px red');
+		rect.shadow('5px 5px 10px 1px red');
+		
+	</script>
+	
+</html>

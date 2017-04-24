@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>选择/创建节点</title>
+	</head>
+	<body>
+		
+		<!-- ID节点 -->
+		<div id="myid">ID节点</div>
+		
+		<!-- CLASS节点-->
+		<ul>
+			<li class="myclass">1</li>
+			<li class="myclass">2</li> 
+		</ul>
+		
+	</body>
+	
+	<script src="element.js"></script>
+	
+	<script>
+	
+		
+		/***************************************
+		 * 
+		 * 重要：选择器返回的对象为原生element对象
+		 * 
+		 ***************************************
+		 */
+		var node = element('myid');
+		
+		console.log(node.nodeName)  //输出：DIV
+		
+		
+	
+		/**
+		 * 根据id选择节点
+		 */
+		console.log(element('myid'))    //输出：<div id="myid">ID节点</div>
+		
+		
+		/**
+		 * 根据class选择节点组
+		 */
+		console.log(element('myclass')) //输出：[li.myclass, li.myclass]
+		
+		
+		/**
+		 * 根据标签名选择节点组
+		 */
+		console.log(element('div'))    //输出：[div#myid, myid: div#myid]
+		
+		
+		/**
+		 * 字符串转换为节点
+		 */
+		console.log(element('<p>新节点</p>')) //输出：<p>新节点</p>
+	
+	</script>
+	
+</html>

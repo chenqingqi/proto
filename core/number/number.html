@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>number扩展</title>
+	</head>
+	<body></body>
+	<script src="number.js"></script>
+<script>
+
+	
+
+	/**
+	 * 数字转字符串
+	 */
+	var n1 = 0.6;
+	
+	console.log(n1.toString())  //输出：'0.6' 
+	
+	
+	/**
+	 * 小数转整数
+	 */
+	var n2 = 0.6666;
+	
+	console.log(n2.toInt())  //输出：1
+	
+	
+	/**
+	 * 负数转正数
+	 */
+	var n3 = -8;
+	
+	console.log(n3.toPositive())  //输出：8
+	
+	
+	/**
+	 * 保留小数点
+	 */
+	var n4 = 1.12385;
+	
+	console.log(n4.toFixed(2))   //输出：1.12
+	
+</script>
+	
+</html>

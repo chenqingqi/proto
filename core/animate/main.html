@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>动画animate</title>
+	</head>
+	<body>
+		<div id="test" style="width: 100px;height: 100px;background-color: red;border-radius: 50%;"></div>
+	</body>
+	
+	<script src="/core/select/select.js"></script>
+	<script src="animate.js"></script>
+	
+	<script>
+	
+		var node = document.querySelector('#test');
+		
+		/**
+		 * 设置动画
+		 * @properties css属性对象
+		 * @duration   持续时间
+		 * @easing     设置缓动类型：linear:'匀速',ease:'慢-快-慢',ease-in:'慢-快',ease-out:'快-慢'
+		 * @complete   动画完成时的回调
+		 */
+		node.animate({marginTop:'500px'},1,'ease',function(e)
+		{
+			console.log('动画完成')
+		})
+		
+		
+		/**
+		 * 旋转节点
+		 */
+		node.rotate(50)
+		
+		
+		/**
+		 * 缩放节点
+		 */
+		node.scale(1,2)
+		
+		
+		/**
+		 * 移动节点
+		 */
+		node.move(50,0);
+		
+	</script>
+	
+</html>

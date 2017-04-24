@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>触摸touch</title>
+	</head>
+	<body>
+		
+		<!-- 结构 -->
+		<div id="rect"></div>
+		
+		<!-- 样式 -->
+		<style>
+		
+			div
+			{
+				width: 200px;
+				height: 200px;
+				background-color: #666666;
+				margin: 100px 0 0 100px;
+			}
+			
+		</style>
+		
+	</body>
+	
+	<script src="touch.js"></script>
+	
+<script>
+	
+	var node = document.getElementById('rect');
+	
+	/**
+	 * 触摸开始
+	 */
+	node.addEventListener('touchstart',function(e)
+	{
+		console.log('触摸开始')
+	})
+	
+	
+	/**
+	 * 触摸中
+	 */
+	node.addEventListener('touchmove',function(e)
+	{
+		//页面
+		console.log(e.touches[0].pageX)
+		
+		//屏幕
+		//console.log(e.touches[0].screenX)
+		
+		//浏览器窗口
+		//console.log(e.touches[0].clientX)
+	})
+	
+	
+	/**
+	 * 触摸结束
+	 */
+	node.addEventListener('touchend',function(e)
+	{
+		
+		//按下和弹起在同一位置
+		console.log(touch.isclick)
+		
+		//当前滑动距离
+		console.log(touch.distance)
+		
+		//当前滑动的方向
+		console.log(touch.direction)
+		
+		//当前滑动的矩形区域
+		console.log(touch.rectangle)
+		
+	})
+	
+</script>
+
+</html>

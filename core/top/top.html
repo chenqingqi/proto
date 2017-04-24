@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>顶级Top</title>
+	</head>
+	<body></body>
+	<script src="is.js"></script>
+<script>
+
+	/**
+	 * 判断对象类型
+	 */
+	console.log(is(123))  //输出：Number
+	
+	function ABC(){}
+	
+	console.log(is(ABC))  //输出：Function
+	
+	var obj = new ABC()
+	
+	console.log(is(obj))  //输出：ABC
+	
+	
+	/**
+	 * 字符串转换成整数
+	 */
+	console.log(parseInt('10px'))  //输出：10
+	
+	
+	/**
+	 * 字符串转换成整数
+	 */
+	console.log(parseInt('10px'))  //输出：10
+	
+	
+	/**
+	 * 字符串转换成小数
+	 */
+	console.log(parseFloat('10.02'))  //输出：10.02'
+	
+	
+	/**
+	 * 强制转换为字符串
+	 */
+	console.log(String(1))  //输出：1
+	
+	
+	/**
+	 * 字符串转换脚本代码来执行
+	 */
+	console.log(eval('console.log("我是字符串代码")'))  //输出：我是字符串代码
+	
+</script>
+	
+</html>

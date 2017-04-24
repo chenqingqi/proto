@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>结构json</title>
+	</head>
+	<body></body>
+<script>
+
+	/**
+	 * 对象转字符串
+	 */
+	
+	var data = [{id:1,name:'小明'},{id:2,name:'张三'}] 
+	
+	console.log(JSON.stringify(data))   //输出：[{"id":1,"name":"小明"},{"id":2,"name":"张三"}]
+	
+	
+	/**
+	 * 字符串转对象
+	 */
+	
+	var data = '[{"id":1,"name":"小明"},{"id":2,"name":"张三"}]';
+	
+	console.log(JSON.parse(data))       //输出：[Object, Object]
+	
+</script>
+	
+</html>

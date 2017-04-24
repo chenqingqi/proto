@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>打开/读取文件File</title>
+	</head>
+	<body></body>
+	<script src="file.js"></script>
+	<script>
+	
+	
+		/**
+		 * 打开文件选框
+		 */
+		window.addEventListener('click',function(e)
+		{
+			file.open();
+		});
+		
+		
+		/**
+		 * 选择文件完成
+		 */
+		file.addEventListener('change',function(e)
+		{
+			console.log('选择文件成功！')
+			
+			/**
+			 * Chrome,IE10+,safair(支持多选)
+			 */
+			if(window.FileReader)
+			{
+				
+				//已选择的文件对象的基本信息数组
+				console.log(this.files);
+				
+				//遍历已选择的文件信息
+				for(var i=0;i<this.files.length;i++)
+				{
+					
+					//文件名
+					console.log(this.files[i].name)
+					
+					//大小
+					console.log(this.files[i].size) 
+					
+					//后缀名
+					console.log(this.files[i].type)
+					
+					//判断是否是图片
+					console.log(this.files[i].type.indexOf('image') !==-1)
+					
+					/**
+					 * 读取文件数据
+					 */
+					var reader = new FileReader();
+					
+					//读取为base64
+					reader.readAsDataURL(this.files[i]);
+					
+					//读取为二进制
+					//reader.readAsBinaryString(this.files[i]);
+					
+					//读取为文本
+					//reader.readAsText(this.files[i]);
+					
+					
+					//读取成功
+					reader.onload = function(e)
+				 	{
+				 		console.log('内容:'+this.result)
+				 	}
+				}
+			}
+			else
+			{
+				throw new Error('文件上传：仅支持IE9+以上浏览器')
+			}
+		})
+		
+		
+	</script>
+	
+</html>

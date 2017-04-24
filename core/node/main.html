@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>节点node</title>
+	</head>
+	<body>
+		<div id="test" style="width: 100px;height: 100px;background-color: #eee;"><p id="p1">1</p><p id="p2">2</p></div>
+	</body>
+	
+	<script src="node.js"></script>
+	
+	<script>
+	
+		var test = document.querySelector('#test');
+		
+		var p1   = document.querySelector('#p1');
+		
+		var p2   = document.querySelector('#p2');
+		
+		
+		/**
+		 * 根据id查找子对象
+		 */
+		console.log(test.find('p2'));
+		
+		
+		/**
+		 * 隐藏节点
+		 */
+		test.visible(false) 
+		
+		
+		/**
+		 * 显示节点
+		 */
+		test.visible(true) 
+		
+		
+		/**
+		 * 遍历子孙节点
+		 */
+		test.traverse(function(node)
+		{
+			console.log(node.id)
+		})
+		
+		
+	    /**
+		 * 设置或获取节点的深度
+		 */
+		//p2.childIndex(0)
+		
+		//console.log(p1.childIndex())
+	
+
+		
+		
+		/**
+		 * 交互两个子节点的位置
+		 */
+		//test.setChildAt(p2,p1);
+		
+		
+		/**
+		 * 将子节点放到开头位置
+		 */
+		//test.setChildToFirst(p2);
+		
+		
+		/**
+		 * 将子节点放到末尾位置
+		 */
+		//test.setChildToLast(p2);
+	
+		
+		
+		/**
+		 * 节点移除自身
+		 */
+		//p2.remove()
+		
+		
+		/**
+		 * 节点替换自身
+		 */
+		//p1.replace(document.createElementByString('<p id="p3">3</p>'))
+		
+		
+		/**
+		 * 设置或按钮模式
+		 */
+		//p2.buttonModel(true)
+		
+		
+		/**
+		 * 查找某个子对象
+		 */
+		console.log(test.find('#p1'))
+		
+	
+	</script>
+	
+</html>

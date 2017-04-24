@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>storage存储</title>
+	</head>
+	<body></body>
+	<script src="storage.js"></script>
+<script>
+
+	/**
+	 * 写入本地永久存储
+	 */
+	storage.write('boy','{"name":"小明","age":"18"}')
+	
+	/**
+	 * 读取本地永久存储
+	 */
+	console.log(storage.read('boy'))
+	
+	/**
+	 * 删除本地永久存储
+	 */
+	storage.remove('boy'); 
+	
+	
+	/**
+	 * 写入临时数据
+	 */
+	storage.writeSession('girl','{"name":"张丽","age":"12"}')
+	
+	/**
+	 * 读取临时数据
+	 */
+	console.log(storage.readSession('girl'))
+	
+	/**
+	 * 删除临时数据
+	 */
+	storage.removeSession('girl')
+	
+	
+	/**
+	 * 写入cookie数据
+	 */
+	storage.writeCookie('teacher','{"name":"王五","age":"36"}')
+	
+	/**
+	 * 读取cookie数据
+	 */
+	console.log(storage.readCookie('teacher'))
+	
+</script>
+	
+</html>

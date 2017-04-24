@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>拖拽 drag</title>
+        <script src="/core/dom/drag.js"></script>
+    </head>
+    <body>
+
+        <!-- 方块 -->
+        <div id="rect"></div>
+
+    </body>
+
+    <script>
+
+        var node = document.getElementById('rect');
+        
+        
+        /**
+         * 设置拖拽区域
+         */
+        
+        
+        /**
+         * 开始拖拽
+         */
+        node.addEventListener('mousedown',function(e)
+        {
+        	node.startDrag()
+        })
+        
+        
+        /**
+         * 结束拖拽
+         */
+        window.addEventListener('mouseup',function(e)
+        {
+        	node.stopDrag()
+        })
+        
+    </script>
+
+</html>

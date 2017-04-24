@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>音视频media</title>
+	</head>
+	<body>
+		<audio id="sound" src="http://www.w3school.com.cn/i/song.mp3" controls="controls"></audio>
+		<!--<video id="sound" src="http://www.w3school.com.cn/i/movie.mp4" controls="controls"></video>-->
+		<p id="playbtn">播放</p>
+		<p id="pausebtn">暂停</p>
+		<p id="stopbtn">停止</p>
+	</body>
+	
+	<script src="/core/select/select.js"></script>
+	
+	<script>
+		
+		
+		var sound_node = document.querySelector('#sound')
+		
+		/**
+		 * 是否显示控制条
+		 */
+		sound_node.controls = true;
+		
+		
+		/**
+		 * 设置音量
+		 */
+		sound_node.volume = 0.5;
+		
+		
+		/**
+		 * 是否循环
+		 */
+		sound_node.loop = true;
+		
+		
+		/**
+		 * 播放
+		 */
+		document.querySelector('#playbtn').addEventListener('click',function(e)
+		{
+			sound_node.play();
+		})
+		
+		
+		/**
+		 * 暂停
+		 */
+		document.querySelector('#pausebtn').addEventListener('click',function(e)
+		{
+			sound_node.pause();
+		})
+		
+		
+		/**
+		 * 停止(重新加载)
+		 */
+		document.querySelector('#stopbtn').addEventListener('click',function(e)
+		{
+			sound_node.load();
+		})
+		
+		
+		
+		/**
+		 * 侦听事件
+		 */
+		sound_node.addEventListener('timeupdate',playing);
+		sound_node.addEventListener('pause',pause);
+		sound_node.addEventListener('ended',end);
+		sound_node.addEventListener('error',error);
+		
+		
+		/**
+		 * 播放中
+		 */
+		function playing(e)
+		{
+			//播放进度
+			console.log('播放中：'+parseInt(e.target.currentTime/e.target.duration*100)+'%')
+		}
+		
+		
+		/**
+		 * 暂停中
+		 */
+		function pause(e)
+		{
+			console.log('播放暂停')
+		}
+		
+		
+		/**
+		 * 播放结束
+		 */
+		function end(e)
+		{
+			console.log('播放结束')
+		}
+		
+		
+		/**
+		 * 播放错误
+		 */
+		function error(e)
+		{
+			console.log('播放错误')
+		}
+		
+		
+	</script>
+
+</html>

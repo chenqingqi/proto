@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>引入JS文件</title>
+	</head>
+	<body></body>
+
+	<script src="request.js"></script>
+<script>
+
+   /**
+     * 请求数据
+	 * @param data  :object       数据
+	 * @param url   :string       地址
+	 * @param type  :string       请求类型
+	 * @param complete :function  请求成功
+	 * @param error :function     网络错误
+     */
+    request({
+		debug  :1,
+		deviceId:'html5',
+		webCode:'hbsi'
+
+    },'server.php','get',function(e){
+
+        console.log('请求成功')
+    })
+    
+    
+    /**
+     * ajax方式请求数据
+     */
+    ajax({
+    	
+	    type:"post",
+	    
+	    url:"server.php",
+	    
+	    data:"name=dipoo&info=good",
+	    
+	    dataType:"json",
+	    
+	    success:function(data)
+	    {
+	        console.log(data.name);
+	    },
+	    error:function(e)
+	    {
+	        console.log(e.code);
+	    }
+	})
+
+</script>
+	
+</html>

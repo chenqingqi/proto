@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>function扩展</title>
+	</head>
+	<body></body>
+<script>
+
+	/**
+	 * 继承
+	 */
+	function Father(num)
+	{
+		this.money = '$'+num;
+	}
+	
+	function Boy()
+	{
+		Father.call(this,1000)
+	}
+	
+	var boy = new Boy();
+	
+	console.log(boy.money)    //输出：$1000
+	
+	
+	
+	/**
+	 * 函数参数
+	 */
+	function attr()
+	{
+		//个数
+		console.log(arguments.length);  //输出：2 
+		
+		//遍历
+		for(var i in arguments)
+		{
+			console.log(arguments[i])   //输出：小明  18
+		}
+	}
+	
+	
+	attr('小明',18);
+	
+</script>
+	
+</html>

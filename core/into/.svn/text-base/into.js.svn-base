@@ -1,0 +1,27 @@
+/**************************************************
+ * 
+ * 获取器
+ * 得到统一入口js文件并执行
+ * 
+***************************************************/
+
+/**
+ * 获得入口类
+ */
+
+window.addEventListener('load',function(e)
+{
+	console.log('提示：网页文档加载完成');
+	
+	if(document.getElementsByTagName('script')[0].getAttribute('main')) 
+	{
+		var script    = document.createElement('script');
+		script.type   = 'text/javascript';
+		script.src    = document.getElementsByTagName('script')[0].getAttribute('main')+'.js';
+		document.getElementsByTagName('head')[0].appendChild(script);
+	}
+	else
+	{
+		console.log('提示:没找到main属性关联的入口类')
+	}
+})

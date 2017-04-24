@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>拖放drop</title>
+        <style>
+
+            div
+            {
+                width:300px;
+                height: 300px;
+                border: 1px solid #999;
+            }
+
+            img
+            {
+                width:200px;
+                height: 200px;
+            }
+
+        </style>
+        <script src="/core/select/select.js"></script>
+    </head>
+    <body>
+
+        <!-- div -->
+        <div id="rect"></div>
+
+        <!-- 图片 -->
+        <img id="pic" src="a.jpg" draggable="true"/>
+
+    </body>
+
+    <script>
+
+		var pic  = document.querySelector('#pic');
+		
+		var rect = document.querySelector('#rect');
+		
+        /**
+         * 开始拖放
+         */
+        pic.addEventListener('dragstart',function(e)
+        {
+            /**
+             * 传递拖放的数据
+             */
+            e.dataTransfer.setData("Text",e.target.id);
+
+            console.log('开始拖放图片')
+        })
+
+        /**
+         * 放置中
+         */
+        rect.addEventListener('dragover',function(e)
+        {
+            e.preventDefault();
+
+            console.log('放置中')
+        })
+
+        /**
+         * 放置成功
+         */
+        rect.addEventListener('drop',function(e)
+        {
+            e.preventDefault();
+
+            e.target.appendChild(document.getElementById(e.dataTransfer.getData("Text")));
+
+            console.log('放置成功')
+        })
+
+    </script>
+
+</html>

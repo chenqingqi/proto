@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>图片bitmap</title>
+	</head>
+	<body>
+		
+		<!-- 图片节点1 -->
+		<img id="pic1" src="a.jpg" />
+		
+		<!-- 图片节点2 -->
+		<img id="pic2"/>
+		
+	</body>
+	
+	<script src="/core/select/select.js"></script>
+	<script src="bitmap.js"></script>
+	
+	<script>
+	
+		var pic1 = document.querySelector('#pic1');
+		
+		var pic2 = document.querySelector('#pic2');
+	
+		/**
+		 * 获取图片后缀名
+		 */
+		console.log(pic1.suffix())
+		
+		/**
+		 * 压缩图片（设置图片的质量）
+		 */
+		pic2.src = pic1.quality(0.1);
+		
+		/**
+		 * 裁剪图片
+		 */
+		pic2.src = pic1.cut(0,0,200,200);
+		
+	</script>
+	
+</html>

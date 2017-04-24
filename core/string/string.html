@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>string扩展</title>
+	</head>
+	<body></body>
+	<script src="string.js"></script>
+<script>
+
+	/**
+	 * 是否为Null,为空
+	 */
+	var str1 = '';
+	console.log(str1.isNullOrEmpty())  //输出：true 
+	
+	/**
+	 * 是否为Null,为空,空格
+	 */
+	var str2 = '    ';
+	console.log(str2.isNullOrWhiteSpace())  //输出：true
+	
+	
+	/**
+	 * 是否包含指定的字符
+	 */
+	var str3 = '123456';
+	console.log(str3.isContains('1'))  //输出：true
+	
+	
+	/**
+	 * 去除左边的空格
+	 */
+	var str4 = '   123456';
+	console.log(str4.ltrim())  //输出：true
+	
+	/**
+	 * 去除右边的空格
+	 */
+	var str5 = '123456   ';
+	console.log(str5.rtrim())  //输出：true
+	
+	/**
+	 * 是否以指定内容开头
+	 */
+	var str6 = 'abcdefg';
+	console.log(str6.startWith('a'))  //输出：true
+	
+	/**
+	 * 是否以指定内容结尾
+	 */
+	var str7 = 'abcdefg';
+	console.log(str7.endWith('g'))  //输出：true
+	
+	/**
+	 * 是否是长日期
+	 */
+	var str8 = '2015-11-19 23:00:26';
+	console.log(str8.isLongDate())  //输出：true
+	
+	/**
+	 * 是否是短日期
+	 */
+	var str9 = '2015-11-19';
+	console.log(str9.isShortDate())  //输出：true
+	
+	/**
+	 * 是否是日期
+	 */
+	var str10 = '2015-11-19';
+	console.log(str10.isDate())  //输出：true
+	
+	/**
+	 * 是否是电话/传真号码
+	 */
+	var str11 = '010-12345678';
+	console.log(str11.isTelOrFax())  //输出：true
+	
+	/**
+	 * 以下省略
+	 */
+	
+</script>
+	
+</html>
+

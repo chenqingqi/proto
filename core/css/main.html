@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>样式css</title>
+	</head>
+	<body>
+		<div id="a"></div>
+		<div id="b"></div>
+	</body>
+	
+	<script src="css.js"></script>
+	
+	<script>
+
+		var node = document.querySelector('#a');
+		
+		/**
+		 * 设置单个元素样式
+		 */
+		node.css({width:'100px',height:'100px',backgroundColor:'#000000'})  
+		
+		
+		/**
+		 * 获取单个元素的样式
+		 */
+		console.log(node.css('backgroundColor'))
+	    
+	    
+	    /**
+		 * 设置对象集合的样式
+		 */
+	    document.querySelectorAll('div').css(
+	    {
+	    	backgroundColor:'red',
+	    	width:'100px',
+	    	height:'100px'
+	    })
+	  
+	
+	</script>
+	
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<school>
+	<class id='1'>
+		<one>一班</one>
+		<two>二班</two>
+	</class>
+</school>
